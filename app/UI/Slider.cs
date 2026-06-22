@@ -1,4 +1,5 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
@@ -75,6 +76,7 @@ namespace GHelper.UI
 
 
         private int _min = 0;
+        [DefaultValue(0)]
         public int Min
         {
             get => _min;
@@ -86,6 +88,7 @@ namespace GHelper.UI
         }
 
         private int _max = 100;
+        [DefaultValue(100)]
         public int Max
         {
             get => _max;
@@ -98,6 +101,7 @@ namespace GHelper.UI
 
 
         private int _step = 1;
+        [DefaultValue(1)]
         public int Step
         {
             get => _step;
@@ -107,6 +111,7 @@ namespace GHelper.UI
             }
         }
         private int _value = 50;
+        [DefaultValue(50)]
         public int Value
         {
             get => _value;
@@ -205,6 +210,7 @@ namespace GHelper.UI
             RecalculateParameters();
         }
 
+        [DefaultValue(false)]
         public bool Exponential { get; set; }
 
         private float ValueToX(int value) => _barPos.X + _barSize.Width *

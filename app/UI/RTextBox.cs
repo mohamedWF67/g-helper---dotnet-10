@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
@@ -24,6 +25,7 @@ namespace GHelper.UI
         // Framework's PlaceholderText is hardcoded to SystemColors.GrayText (~109,109,109),
         // which is unreadable on a dark BG. We shadow it and paint our own using a BackColor/ForeColor blend.
         private string _placeholder = "";
+        [DefaultValue("")]
         public new string PlaceholderText
         {
             get => _placeholder;

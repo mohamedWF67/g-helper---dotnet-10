@@ -1,10 +1,12 @@
 using System.Drawing.Drawing2D;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
     public class RCheckBox : CheckBox
     {
         private int borderRadius = 5;
+        [DefaultValue(5)]
         public int BorderRadius
         {
             get => borderRadius;

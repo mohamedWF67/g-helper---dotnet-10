@@ -1,4 +1,5 @@
-﻿using GHelper.UI;
+using GHelper.UI;
+using System.ComponentModel;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -14,6 +15,7 @@ public class NumericUpDownWithUnit : RNumericUpDown
 
     #region| Properties |
 
+    [DefaultValue(null)]
     public string Unit
     {
         get => unit;
@@ -25,6 +27,7 @@ public class NumericUpDownWithUnit : RNumericUpDown
         }
     }
 
+    [DefaultValue(false)]
     public bool UnitFirst
     {
         get => unitFirst;
@@ -36,6 +39,7 @@ public class NumericUpDownWithUnit : RNumericUpDown
         }
     }
 
+    [DefaultValue(null)]
     public string OffText
     {
         get => offText;

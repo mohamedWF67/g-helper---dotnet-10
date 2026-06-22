@@ -1,10 +1,12 @@
 using System.Drawing.Drawing2D;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
     public class RBadgeButton : RButton
     {
         private int badge = 0;
+        [DefaultValue(0)]
         public int Badge
         {
             get => badge;

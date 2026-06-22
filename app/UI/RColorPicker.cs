@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
@@ -6,6 +7,7 @@ namespace GHelper.UI
     // the aura_color_custom config key (0x00BBGGRR COLORREF, same format ColorDialog used).
     public class RColorPicker : RForm
     {
+        [DefaultValue(typeof(Color), "Red")]
         public Color Color { get; set; } = Color.Red;
 
         // Fires when the color is committed (swatch/hex click or drag release) for the live device
@@ -273,6 +275,7 @@ namespace GHelper.UI
             public float UiScale = 1;
 
             private Color color;
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
             public Color Color
             {
                 get => color;

@@ -1,4 +1,5 @@
-﻿using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
+using System.ComponentModel;
 
 namespace GHelper.UI
 {
@@ -16,6 +17,7 @@ namespace GHelper.UI
         private int borderSize = 5;
 
         private int borderRadius = 5;
+        [DefaultValue(5)]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -26,6 +28,7 @@ namespace GHelper.UI
         }
 
         private Color borderColor = Color.Transparent;
+        [DefaultValue(typeof(Color), "Transparent")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -37,6 +40,7 @@ namespace GHelper.UI
 
 
         private bool activated = false;
+        [DefaultValue(false)]
         public bool Activated
         {
             get { return activated; }
@@ -50,6 +54,7 @@ namespace GHelper.UI
         }
 
         private bool secondary = false;
+        [DefaultValue(false)]
         public bool Secondary
         {
             get { return secondary; }
@@ -59,6 +64,7 @@ namespace GHelper.UI
             }
         }
 
+        [DefaultValue(false)]
         public bool Borderless { get; set; } = false;
 
         protected override bool ShowFocusCues => false;
