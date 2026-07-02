@@ -45,6 +45,7 @@ namespace GHelper
         // The main entry point for the application
         public static void Main(string[] args)
         {
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
             string action = "";
             if (args.Length > 0) action = args[0];
@@ -124,6 +125,7 @@ namespace GHelper
             }
 
             ProcessHelper.KillSmartDisplayControl();
+            AsusService.StopOnStartup();
 
             Application.EnableVisualStyles();
 
@@ -432,6 +434,8 @@ namespace GHelper
             {
                 var screen = Screen.PrimaryScreen;
                 if (screen is null) screen = Screen.FromControl(settingsForm);
+
+                settingsForm.WindowState = FormWindowState.Normal;
 
                 settingsForm.Location = screen.WorkingArea.Location;
                 settingsForm.Left = screen.WorkingArea.Width - 10 - settingsForm.Width;
